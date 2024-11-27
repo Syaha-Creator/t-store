@@ -1,33 +1,41 @@
 import 'package:flutter/material.dart';
 
-class TOutlineButtonTheme {
-  TOutlineButtonTheme._();
+class TOutlinedButtonTheme {
+  TOutlinedButtonTheme._();
 
-  static final lightOutlineButtonTheme = OutlinedButtonThemeData(
+  static final lightOutlinedButtonTheme = OutlinedButtonThemeData(
     style: OutlinedButton.styleFrom(
-      elevation: 0,
-      foregroundColor: Colors.white,
-      backgroundColor: Colors.blue,
+      foregroundColor: Colors.blue,
+      backgroundColor: Colors.transparent,
       disabledForegroundColor: Colors.grey,
-      disabledBackgroundColor: Colors.grey,
       side: const BorderSide(color: Colors.blue),
       padding: const EdgeInsets.symmetric(vertical: 18),
-      textStyle: const TextStyle(fontSize: 16, color: Colors.white, fontWeight: FontWeight.w600),
-      shape: BeveledRectangleBorder(borderRadius: BorderRadius.circular(12)),
+      textStyle: const TextStyle(
+        fontSize: 16,
+        fontWeight: FontWeight.w600,
+        color: Colors.blue,
+      ),
+      shape: BeveledRectangleBorder(
+        borderRadius: BorderRadius.circular(12),
+      ),
     ),
   );
 
-  static final darkOutlineButtonTheme = OutlinedButtonThemeData(
+  static final darkOutlinedButtonTheme = OutlinedButtonThemeData(
     style: OutlinedButton.styleFrom(
-      elevation: 0,
-      foregroundColor: Colors.white,
-      backgroundColor: Colors.blue,
+      foregroundColor: Colors.blue,
+      backgroundColor: Colors.transparent,
       disabledForegroundColor: Colors.grey,
-      disabledBackgroundColor: Colors.grey,
       side: const BorderSide(color: Colors.blue),
       padding: const EdgeInsets.symmetric(vertical: 18),
-      textStyle: const TextStyle(fontSize: 16, color: Colors.white, fontWeight: FontWeight.w600),
-      shape: BeveledRectangleBorder(borderRadius: BorderRadius.circular(12)),
+      textStyle: const TextStyle(
+        fontSize: 16,
+        fontWeight: FontWeight.w600,
+        color: Colors.blue,
+      ),
+      shape: BeveledRectangleBorder(
+        borderRadius: BorderRadius.circular(12),
+      ),
     ),
   );
 }
