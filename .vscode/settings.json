@@ -7,8 +7,23 @@
   "files.autoSave": "onFocusChange", // optional but recommended
   "vs-code-prettier-eslint.prettierLast": false,
     "cSpell.words": [
-        "appbar",
-        "iconsax",
-        "tstore"
+      "acerlogo",
+      "appbar",
+      "cordova",
+      "dogfood",
+      "firestore",
+      "iconsax",
+      "jewelery",
+      "Jordon",
+      "Jordonwhite",
+      "kenwood",
+      "Ordon",
+      "parrotgreen",
+      "readmore",
+      "trcksuit",
+      "tshirt",
+      "tstore",
+      "Wildhorse",
+      "withback"
     ]
 }
