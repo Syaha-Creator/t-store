@@ -34,11 +34,13 @@ class TLoginForm extends StatelessWidget {
                   labelText: TTexts.password,
                   suffixIcon: Icon(Iconsax.eye_slash)),
             ),
-            const SizedBox(height: TSizes.spaceBtwInputFields),
+            const SizedBox(height: TSizes.spaceBtwInputFields / 2),
 
             // Remember me & Forgot Password
             Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
+                // Remember Me
                 Row(
                   children: [
                     Checkbox(value: true, onChanged: (value) {}),
@@ -66,11 +68,10 @@ class TLoginForm extends StatelessWidget {
             // Create Account Button
             SizedBox(
               width: double.infinity,
-              child: ElevatedButton(
+              child: OutlinedButton(
                   onPressed: () => Get.to(() => const SignupScreen()),
                   child: const Text(TTexts.createAccount)),
             ),
-            const SizedBox(height: TSizes.spaceBtwSections),
           ],
         ),
       ),
