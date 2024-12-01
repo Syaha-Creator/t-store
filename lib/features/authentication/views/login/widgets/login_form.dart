@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
+import 'package:tstore/features/authentication/views/password_configuration/forget_password.dart';
 import 'package:tstore/features/authentication/views/signup/signup.dart';
 import 'package:tstore/utils/constants/sizes.dart';
 import 'package:tstore/utils/constants/text_strings.dart';
@@ -33,6 +34,7 @@ class TLoginForm extends StatelessWidget {
                   suffixIcon: Icon(Iconsax.eye_slash)),
             ),
             const SizedBox(height: TSizes.spaceBtwInputFields),
+
             // Remember me & Forgot Password
             Row(
               children: [
@@ -45,7 +47,8 @@ class TLoginForm extends StatelessWidget {
 
                 // Forget Password
                 TextButton(
-                    onPressed: () {}, child: const Text(TTexts.forgetPassword)),
+                    onPressed: () => Get.to(() => const ForgetPassword()),
+                    child: const Text(TTexts.forgetPassword)),
               ],
             ),
             const SizedBox(height: TSizes.spaceBtwSections),
