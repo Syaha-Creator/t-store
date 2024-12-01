@@ -50,6 +50,7 @@ class TSignupForm extends StatelessWidget {
                 labelText: TTexts.username,
                 prefixIcon: Icon(Iconsax.user_edit)),
           ),
+          const SizedBox(height: TSizes.spaceBtwInputFields),
 
           // Email
           TextFormField(
@@ -77,6 +78,7 @@ class TSignupForm extends StatelessWidget {
 
           // Terms & Conditions Checkbox
           const TTermsAndConditionCheckbox(),
+          const SizedBox(height: TSizes.spaceBtwSections),
 
           // Sign up Button
           SizedBox(
