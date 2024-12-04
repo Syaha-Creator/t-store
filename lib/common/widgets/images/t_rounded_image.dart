@@ -41,10 +41,10 @@ class TRoundedImage extends StatelessWidget {
         decoration: BoxDecoration(
             border: border,
             color: backgroundColor,
-            borderRadius: BorderRadius.circular(TSizes.md)),
+            borderRadius: BorderRadius.circular(borderRadius)),
         child: ClipRRect(
           borderRadius: applyImageRadius
-              ? BorderRadius.circular(TSizes.md)
+              ? BorderRadius.circular(borderRadius)
               : BorderRadius.zero,
           child: Image(
             fit: fit,
