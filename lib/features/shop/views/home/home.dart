@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:tstore/features/shop/views/home/widgets/home_appbar.dart';
 import 'package:tstore/features/shop/views/home/widgets/home_categories.dart';
+import 'package:tstore/features/shop/views/home/widgets/promo_slider.dart';
 
 import '../../../../common/widgets/custom_shapes/containers/primary_header_container.dart';
 import '../../../../common/widgets/custom_shapes/containers/search_container.dart';
 import '../../../../common/widgets/texts/section_heading.dart';
+import '../../../../utils/constants/image_strings.dart';
 import '../../../../utils/constants/sizes.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -48,6 +50,18 @@ class HomeScreen extends StatelessWidget {
                       ],
                     ),
                   )
+                ],
+              ),
+            ),
+
+            // Body
+            Padding(
+              padding: EdgeInsets.all(TSizes.defaultSpace),
+              child: TPromoSlider(
+                banners: [
+                  TImages.promoBanner1,
+                  TImages.promoBanner2,
+                  TImages.promoBanner3
                 ],
               ),
             ),
