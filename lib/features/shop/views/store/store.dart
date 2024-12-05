@@ -62,6 +62,7 @@ class StoreScreen extends StatelessWidget {
                           title: 'Featured Brands', onPressed: () {}),
                       const SizedBox(height: TSizes.spaceBtwItems / 1.5),
 
+                      // Brands GRID
                       TGridLayout(
                           itemCount: 4,
                           mainAxisExtent: 80,
