@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:tstore/common/widgets/appbar/appbar.dart';
-import 'package:tstore/common/widgets/custom_shapes/containers/rounded_container.dart';
 import 'package:tstore/common/widgets/custom_shapes/containers/search_container.dart';
 import 'package:tstore/common/widgets/layouts/grid_layout.dart';
 import 'package:tstore/common/widgets/products/cart/cart_menu_icon.dart';
@@ -10,9 +9,7 @@ import 'package:tstore/utils/helpers/helper_functions.dart';
 
 import '../../../../common/widgets/appbar/tabbar.dart';
 import '../../../../common/widgets/brands/brand_cart.dart';
-import '../../../../common/widgets/brands/brand_showcase.dart';
 import '../../../../utils/constants/colors.dart';
-import '../../../../utils/constants/image_strings.dart';
 import '../../../../utils/constants/sizes.dart';
 
 class StoreScreen extends StatelessWidget {
