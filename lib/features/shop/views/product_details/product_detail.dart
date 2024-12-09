@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:readmore/readmore.dart';
 import 'package:tstore/common/widgets/texts/section_heading.dart';
-import 'package:tstore/features/shop/views/products_details/widgets/bottom_add_to_cart.dart';
-import 'package:tstore/features/shop/views/products_details/widgets/product_attributes.dart';
-import 'package:tstore/features/shop/views/products_details/widgets/product_detail_image_slider.dart';
-import 'package:tstore/features/shop/views/products_details/widgets/product_meta_data.dart';
-import 'package:tstore/features/shop/views/products_details/widgets/rating_share_widgets.dart';
+import 'package:tstore/features/shop/views/product_details/widgets/bottom_add_to_cart.dart';
+import 'package:tstore/features/shop/views/product_details/widgets/product_attributes.dart';
+import 'package:tstore/features/shop/views/product_details/widgets/product_detail_image_slider.dart';
+import 'package:tstore/features/shop/views/product_details/widgets/product_meta_data.dart';
+import 'package:tstore/features/shop/views/product_details/widgets/rating_share_widgets.dart';
+import 'package:tstore/features/shop/views/product_reviews/product_review.dart';
 
 import '../../../../utils/constants/sizes.dart';
 
@@ -77,7 +79,8 @@ class ProductDetailScreen extends StatelessWidget {
                           showActionButton: false),
                       IconButton(
                           icon: const Icon(Iconsax.arrow_right_3, size: 18),
-                          onPressed: () {}),
+                          onPressed: () =>
+                              Get.to(() => const ProductReviewScreen())),
                     ],
                   ),
                   const SizedBox(height: TSizes.spaceBtwSections)
