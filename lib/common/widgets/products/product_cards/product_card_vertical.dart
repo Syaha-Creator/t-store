@@ -45,6 +45,7 @@ class TProductCardVertical extends StatelessWidget {
                     imageUrl: TImages.productImage1,
                     applyImageRadius: true,
                   ),
+
                   // Sale Tag
                   Positioned(
                     top: 12,
@@ -62,6 +63,8 @@ class TProductCardVertical extends StatelessWidget {
                       ),
                     ),
                   ),
+
+                  // Favorite Icon Button
                   const Positioned(
                     top: 0,
                     right: 0,
@@ -105,6 +108,8 @@ class TProductCardVertical extends StatelessWidget {
                     price: '35.0',
                   ),
                 ),
+
+                // Add to Cart Button
                 Container(
                   decoration: const BoxDecoration(
                     color: TColors.dark,
