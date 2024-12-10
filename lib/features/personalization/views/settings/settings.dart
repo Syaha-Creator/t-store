@@ -7,6 +7,7 @@ import 'package:tstore/common/widgets/list_tile/settings_menu_tile.dart';
 import 'package:tstore/common/widgets/texts/section_heading.dart';
 import 'package:tstore/features/personalization/views/address/address.dart';
 import 'package:tstore/features/personalization/views/profile/profile.dart';
+import 'package:tstore/features/shop/views/order/order.dart';
 
 import '../../../../common/widgets/list_tile/user_profile_tile.dart';
 import '../../../../utils/constants/colors.dart';
@@ -67,10 +68,11 @@ class SettingScreen extends StatelessWidget {
                     title: 'My Cart',
                     subtitle: 'Add, remove products and move to checkout',
                   ),
-                  const TSettingsMenuTile(
+                  TSettingsMenuTile(
                     icon: Iconsax.bag_tick,
                     title: 'My Orders',
                     subtitle: 'In-progress and Completed Orders',
+                    onTap: () => Get.to(() => const OrderScreen()),
                   ),
                   const TSettingsMenuTile(
                     icon: Iconsax.bank,
