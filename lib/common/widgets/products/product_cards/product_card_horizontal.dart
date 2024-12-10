@@ -10,7 +10,6 @@ import 'package:tstore/utils/helpers/helper_functions.dart';
 import '../../../../utils/constants/colors.dart';
 import '../../../../utils/constants/image_strings.dart';
 import '../../../../utils/constants/sizes.dart';
-import '../../../styles/shadows.dart';
 import '../../icons/t_circular_icon.dart';
 
 class TProductCardHorizontal extends StatelessWidget {
