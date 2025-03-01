@@ -12,7 +12,20 @@
           "package_name": "com.syahrul.tstore"
         }
       },
-      "oauth_client": [],
+      "oauth_client": [
+        {
+          "client_id": "933388007622-kb0bmo62pa56qh9cil9sto63bk4nn8a2.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.syahrul.tstore",
+            "certificate_hash": "505f8b9cfaa3aaf6bc698dcc305d0066442a607b"
+          }
+        },
+        {
+          "client_id": "933388007622-rrs4j3b06on2rlivvkbmmt55lk66rb64.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
       "api_key": [
         {
           "current_key": "AIzaSyDe9zqv_QOjQ65ZaR4QJuxB8wjhHFtHx30"
@@ -20,7 +33,19 @@
       ],
       "services": {
         "appinvite_service": {
-          "other_platform_oauth_client": []
+          "other_platform_oauth_client": [
+            {
+              "client_id": "933388007622-rrs4j3b06on2rlivvkbmmt55lk66rb64.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "933388007622-5693ampejo67snmlner64bhua5knf8cr.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.syahrul.tstore"
+              }
+            }
+          ]
         }
       }
     }
