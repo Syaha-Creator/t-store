@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
+import 'package:tstore/data/repositories/authentication/authentication_repository.dart';
 
 import 'app.dart';
 import 'firebase_options.dart';
@@ -20,7 +21,9 @@ Future<void> main() async {
 
   // Initialize Firebase
   await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform)
-      .then((FirebaseApp value) => Get.put(value));
+      .then(
+    (FirebaseApp value) => Get.put(AuthenticationRepository()),
+  );
 
   // Load all the Material Design / Themes / Localization / Bindings
   runApp(const App());
