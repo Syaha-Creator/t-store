@@ -1,4 +1,4 @@
-package com.syahrul.tstore.tstore;
+package com.syahrul.tstore;
 
 import io.flutter.embedding.android.FlutterActivity;
 

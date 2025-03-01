@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:tstore/common/widgets/appbar/appbar.dart';
 import 'package:tstore/common/widgets/custom_shapes/containers/search_container.dart';
 import 'package:tstore/common/widgets/layouts/grid_layout.dart';
 import 'package:tstore/common/widgets/products/cart/cart_menu_icon.dart';
 import 'package:tstore/common/widgets/texts/section_heading.dart';
+import 'package:tstore/features/shop/views/brand/all_brands.dart';
 import 'package:tstore/features/shop/views/store/widgets/category_tab.dart';
 import 'package:tstore/utils/helpers/helper_functions.dart';
 
@@ -59,7 +61,9 @@ class StoreScreen extends StatelessWidget {
 
                       // Features Brands
                       TSectionHeading(
-                          title: 'Featured Brands', onPressed: () {}),
+                          title: 'Featured Brands',
+                          onPressed: () =>
+                              Get.to(() => const AllBrandsScreen())),
                       const SizedBox(height: TSizes.spaceBtwItems / 1.5),
 
                       // Brands GRID
