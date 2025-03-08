@@ -16,9 +16,11 @@ import '../../../features/authentication/views/onboarding/onboarding.dart';
 class AuthenticationRepository extends GetxController {
   static AuthenticationRepository get instance => Get.find();
 
+  // Variables
   final deviceStorage = GetStorage();
   final _auth = FirebaseAuth.instance;
 
+  // Called from main.dart on app launch
   @override
   void onReady() {
     // Remove the native Splash Screen
@@ -30,15 +32,20 @@ class AuthenticationRepository extends GetxController {
   // Function to Show Relevant Screen
   screenRedirect() async {
     final user = _auth.currentUser;
+
     if (user != null) {
+      // If the user is logged in
       if (user.emailVerified) {
+        // If the user's email is verified, navigate to the main Navigation Menu
         Get.offAll(() => const NavigationMenu());
       } else {
+        // If the user's email is not verified, navigate to the VerifyEmailScreen
         Get.offAll(() => VerifyEmailScreen(email: _auth.currentUser?.email));
       }
     } else {
       // Local Storage
       deviceStorage.writeIfNull('isFirstTime', true);
+
       // Check if it's the first time launching the app
       deviceStorage.read('isFirstTime') != true
           ? Get.offAll(() => const LoginScreen())
@@ -47,7 +54,24 @@ class AuthenticationRepository extends GetxController {
   }
 
 /* ------------------- Email & Password sign-in ------------------- */
-  // [EmailAuthentication] - Signin
+  // [EmailAuthentication] - LOGIN
+  Future<UserCredential> loginWithEmailAndPassword(
+      String email, String password) async {
+    try {
+      return await _auth.signInWithEmailAndPassword(
+          email: email, password: password);
+    } on FirebaseAuthException catch (e) {
+      throw TFirebaseAuthException(e.code).message;
+    } on FirebaseException catch (e) {
+      throw TFirebaseException(e.code).message;
+    } on FormatException catch (_) {
+      throw const TFormatException();
+    } on PlatformException catch (e) {
+      throw TPlatformException(e.code).message;
+    } catch (e) {
+      throw 'Something went wrong. Please try again.';
+    }
+  }
 
   // [EmailAuthentication] - REGISTER
   Future<UserCredential> registerWithEmailAndPassword(

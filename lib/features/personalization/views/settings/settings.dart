@@ -5,6 +5,7 @@ import 'package:tstore/common/widgets/appbar/appbar.dart';
 import 'package:tstore/common/widgets/custom_shapes/containers/primary_header_container.dart';
 import 'package:tstore/common/widgets/list_tile/settings_menu_tile.dart';
 import 'package:tstore/common/widgets/texts/section_heading.dart';
+import 'package:tstore/data/repositories/authentication/authentication_repository.dart';
 import 'package:tstore/features/personalization/views/address/address.dart';
 import 'package:tstore/features/personalization/views/profile/profile.dart';
 import 'package:tstore/features/shop/views/order/order.dart';
@@ -128,7 +129,9 @@ class SettingScreen extends StatelessWidget {
                   SizedBox(
                     width: double.infinity,
                     child: OutlinedButton(
-                        onPressed: () {}, child: const Text('Logout')),
+                        onPressed: () =>
+                            AuthenticationRepository.instance.logout(),
+                        child: const Text('Logout')),
                   ),
                   const SizedBox(
                     height: TSizes.spaceBtwSections,
