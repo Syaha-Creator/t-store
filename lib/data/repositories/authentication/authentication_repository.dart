@@ -21,7 +21,9 @@ class AuthenticationRepository extends GetxController {
 
   @override
   void onReady() {
+    // Remove the native Splash Screen
     FlutterNativeSplash.remove();
+    // Redirect to the appropriate screen
     screenRedirect();
   }
 
@@ -37,6 +39,7 @@ class AuthenticationRepository extends GetxController {
     } else {
       // Local Storage
       deviceStorage.writeIfNull('isFirstTime', true);
+      // Check if it's the first time launching the app
       deviceStorage.read('isFirstTime') != true
           ? Get.offAll(() => const LoginScreen())
           : Get.offAll(() => const OnboardingScreen());
@@ -68,7 +71,7 @@ class AuthenticationRepository extends GetxController {
   // [EmailVerification] - MAIL VERIFICATION
   Future<void> sendEmailVerification() async {
     try {
-      await _auth.currentUser!.sendEmailVerification();
+      await _auth.currentUser?.sendEmailVerification();
     } on FirebaseAuthException catch (e) {
       throw TFirebaseAuthException(e.code).message;
     } on FirebaseException catch (e) {
