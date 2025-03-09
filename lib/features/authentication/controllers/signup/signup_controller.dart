@@ -35,18 +35,12 @@ class SignupController extends GetxController {
       final isConnected = await NetworkManager.instance.isConnected();
       if (!isConnected) {
         TFullScreenLoader.stopLoading();
-        TLoaders.errorSnackBar(
-            title: 'No Internet',
-            message: 'Please check your internet connection and try again.');
         return;
       }
 
       // Form Validation
       if (!signupFormKey.currentState!.validate()) {
         TFullScreenLoader.stopLoading();
-        TLoaders.errorSnackBar(
-            title: 'Invalid Input',
-            message: 'Please fill all required fields.');
         return;
       }
 
@@ -79,7 +73,7 @@ class SignupController extends GetxController {
       );
 
       final userRepository = Get.put(UserRepository());
-      await userRepository.savedUserRecord(newUser);
+      await userRepository.saveUserRecord(newUser);
 
       // Remove Loader
       TFullScreenLoader.stopLoading();
