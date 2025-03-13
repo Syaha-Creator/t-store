@@ -1,18 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
-import 'package:tstore/common/widgets/appbar/appbar.dart';
-import 'package:tstore/common/widgets/custom_shapes/containers/primary_header_container.dart';
-import 'package:tstore/common/widgets/list_tile/settings_menu_tile.dart';
-import 'package:tstore/common/widgets/texts/section_heading.dart';
-import 'package:tstore/data/repositories/authentication/authentication_repository.dart';
-import 'package:tstore/features/personalization/views/address/address.dart';
-import 'package:tstore/features/personalization/views/profile/profile.dart';
-import 'package:tstore/features/shop/views/order/order.dart';
 
+import '../../../../common/widgets/appbar/appbar.dart';
+import '../../../../common/widgets/custom_shapes/containers/primary_header_container.dart';
+import '../../../../common/widgets/list_tile/settings_menu_tile.dart';
 import '../../../../common/widgets/list_tile/user_profile_tile.dart';
+import '../../../../common/widgets/texts/section_heading.dart';
+import '../../../../data/repositories/authentication/authentication_repository.dart';
 import '../../../../utils/constants/colors.dart';
 import '../../../../utils/constants/sizes.dart';
+import '../../../shop/views/order/order.dart';
+import '../address/address.dart';
+import '../profile/profile.dart';
 
 class SettingScreen extends StatelessWidget {
   const SettingScreen({super.key});
