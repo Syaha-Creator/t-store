@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:tstore/bindings/general_bindings.dart';
-import 'package:tstore/utils/theme/theme.dart';
 
+import 'bindings/general_bindings.dart';
+import 'routes/app_routes.dart';
 import 'utils/constants/colors.dart';
+import 'utils/theme/theme.dart';
 
 class App extends StatelessWidget {
   const App({super.key});
@@ -15,6 +16,7 @@ class App extends StatelessWidget {
         theme: TAppTheme.lightTheme,
         darkTheme: TAppTheme.darkTheme,
         initialBinding: GeneralBindings(),
+        getPages: AppRoutes.pages,
         home: const Scaffold(
           backgroundColor: TColors.primary,
           body: Center(

@@ -1,8 +1,8 @@
 class TRoutes {
   static const home = '/';
   static const store = '/store';
+  static const favourites = '/favourites';
   static const settings = '/settings';
-  static const favorites = '/favorites';
   static const subCategories = '/sub-categories';
   static const search = '/search';
   static const productReviews = '/product-reviews';

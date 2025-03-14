@@ -1,40 +1,38 @@
 import '../../features/shop/models/banner_model.dart';
+import '../../features/shop/models/brand_category_model.dart';
+import '../../features/shop/models/brand_model.dart';
 import '../../features/shop/models/category_model.dart';
-import '../../routes/route.dart';
+import '../../routes/routes.dart';
 import '../../utils/constants/image_strings.dart';
 
 class TDummyData {
-  /// -- list of all banners
+  // -- List of All Banners
   static final List<BannerModel> banners = [
     BannerModel(
-        imageUrl: TImages.promoBanner1,
-        active: false,
-        targetScreen: TRoutes.order),
+        imageUrl: TImages.banner1, active: false, targetScreen: TRoutes.order),
     BannerModel(
-        imageUrl: TImages.promoBanner2,
-        active: true,
-        targetScreen: TRoutes.cart),
-    BannerModel(
-        imageUrl: TImages.promoBanner3,
-        active: true,
-        targetScreen: TRoutes.favorites),
-    BannerModel(
-        imageUrl: TImages.banner1, active: true, targetScreen: TRoutes.search),
-    BannerModel(
-        imageUrl: TImages.banner2,
-        active: true,
-        targetScreen: TRoutes.settings),
+        imageUrl: TImages.banner2, active: true, targetScreen: TRoutes.cart),
     BannerModel(
         imageUrl: TImages.banner3,
         active: true,
+        targetScreen: TRoutes.favourites),
+    BannerModel(
+        imageUrl: TImages.banner4, active: true, targetScreen: TRoutes.search),
+    BannerModel(
+        imageUrl: TImages.banner5,
+        active: true,
+        targetScreen: TRoutes.settings),
+    BannerModel(
+        imageUrl: TImages.banner6,
+        active: true,
         targetScreen: TRoutes.userAddress),
     BannerModel(
-        imageUrl: TImages.banner4,
+        imageUrl: TImages.banner8,
         active: true,
         targetScreen: TRoutes.checkout),
   ];
 
-  ///-- list of all categories
+  // -- List of All Categories
   static final List<CategoryModel> categories = [
     CategoryModel(
         id: '1', image: TImages.sportIcon, name: 'Sports', isFeatured: true),
@@ -65,7 +63,7 @@ class TDummyData {
         name: 'Jewelry',
         isFeatured: true),
 
-    //sub categories
+    // sports
     CategoryModel(
         id: '8',
         image: TImages.sportIcon,
@@ -85,7 +83,7 @@ class TDummyData {
         parentId: '1',
         isFeatured: false),
 
-    //furniture
+    // Furniture
     CategoryModel(
         id: '11',
         image: TImages.furnitureIcon,
@@ -105,7 +103,7 @@ class TDummyData {
         parentId: '5',
         isFeatured: false),
 
-    //electronics
+    // Electronics
     CategoryModel(
         id: '14',
         image: TImages.electronicsIcon,
@@ -126,4 +124,71 @@ class TDummyData {
         parentId: '3',
         isFeatured: false),
   ];
+
+  // -- List of All Brands
+  static final List<BrandModel> brands = [
+    BrandModel(
+        id: '1',
+        image: TImages.nikeLogo,
+        name: 'Nike',
+        productsCount: 265,
+        isFeatured: true),
+    BrandModel(
+        id: '2',
+        image: TImages.adidasLogo,
+        name: 'Adidas',
+        productsCount: 95,
+        isFeatured: true),
+    BrandModel(
+        id: '3',
+        image: TImages.jordanLogo,
+        name: 'Jordan',
+        productsCount: 36,
+        isFeatured: true),
+    BrandModel(
+        id: '4',
+        image: TImages.pumaLogo,
+        name: 'Puma',
+        productsCount: 65,
+        isFeatured: true),
+    BrandModel(
+        id: '5',
+        image: TImages.appleLogo,
+        name: 'Apple',
+        productsCount: 16,
+        isFeatured: true),
+    BrandModel(
+        id: '6',
+        image: TImages.zaraLogo,
+        name: 'ZARA',
+        productsCount: 36,
+        isFeatured: true),
+    BrandModel(
+        id: '7',
+        image: TImages.electronicsIcon,
+        name: 'Samsung',
+        productsCount: 5,
+        isFeatured: true),
+    BrandModel(
+        id: '8',
+        image: TImages.kenwoodLogo,
+        name: 'Kenwoord',
+        productsCount: 36,
+        isFeatured: true),
+    BrandModel(
+        id: '9',
+        image: TImages.ikeaLogo,
+        name: 'IKEA',
+        productsCount: 36,
+        isFeatured: true),
+    BrandModel(
+        id: '10',
+        image: TImages.acerlogo,
+        name: 'Acer',
+        productsCount: 36,
+        isFeatured: true),
+  ];
+
+  // -- List of All Brand Categories
+  static final List<BrandCategoryModel> brandCategories = [];
 }
