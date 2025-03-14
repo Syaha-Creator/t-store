@@ -5,7 +5,7 @@ import 'package:tstore/common/widgets/appbar/appbar.dart';
 import 'package:tstore/common/widgets/images/t_circular_image.dart';
 import 'package:tstore/common/widgets/texts/section_heading.dart';
 import 'package:tstore/features/personalization/views/profile/widgets/profile_menu.dart';
-import 'package:tstore/utils/shimmer/shimmer.dart';
+import 'package:tstore/common/widgets/shimmers/shimmer.dart';
 
 import '../../../../utils/constants/image_strings.dart';
 import '../../../../utils/constants/sizes.dart';

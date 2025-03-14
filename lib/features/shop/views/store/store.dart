@@ -1,27 +1,29 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:tstore/common/widgets/appbar/appbar.dart';
-import 'package:tstore/common/widgets/custom_shapes/containers/search_container.dart';
-import 'package:tstore/common/widgets/layouts/grid_layout.dart';
-import 'package:tstore/common/widgets/products/cart/cart_menu_icon.dart';
-import 'package:tstore/common/widgets/texts/section_heading.dart';
-import 'package:tstore/features/shop/views/brand/all_brands.dart';
-import 'package:tstore/features/shop/views/store/widgets/category_tab.dart';
-import 'package:tstore/utils/helpers/helper_functions.dart';
 
+import '../../../../common/widgets/appbar/appbar.dart';
 import '../../../../common/widgets/appbar/tabbar.dart';
 import '../../../../common/widgets/brands/brand_cart.dart';
+import '../../../../common/widgets/custom_shapes/containers/search_container.dart';
+import '../../../../common/widgets/layouts/grid_layout.dart';
+import '../../../../common/widgets/products/cart/cart_menu_icon.dart';
+import '../../../../common/widgets/texts/section_heading.dart';
 import '../../../../utils/constants/colors.dart';
 import '../../../../utils/constants/sizes.dart';
+import '../../../../utils/helpers/helper_functions.dart';
+import '../../controllers/category_controller.dart';
+import '../brand/all_brands.dart';
+import 'widgets/category_tab.dart';
 
 class StoreScreen extends StatelessWidget {
   const StoreScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final categories = CategoryController.instance.featuredCategories;
     final dark = THelperFunctions.isDarkMode(context);
     return DefaultTabController(
-      length: 5,
+      length: categories.length,
       child: Scaffold(
         appBar: TAppBar(
           title: Text(
@@ -77,28 +79,18 @@ class StoreScreen extends StatelessWidget {
                   ),
                 ),
                 // Tabs
-                bottom: const TTabBar(
-                  tabs: [
-                    Tab(child: Text('Sports')),
-                    Tab(child: Text('Furniture')),
-                    Tab(child: Text('Electronics')),
-                    Tab(child: Text('Clothes')),
-                    Tab(child: Text('Cosmetics')),
-                  ],
-                ),
+                bottom: TTabBar(
+                    tabs: categories
+                        .map((category) => Tab(child: Text(category.name)))
+                        .toList()),
               )
             ];
           },
           // body: Container(),
-          body: const TabBarView(
-            children: [
-              TCategoryTab(),
-              TCategoryTab(),
-              TCategoryTab(),
-              TCategoryTab(),
-              TCategoryTab(),
-            ],
-          ),
+          body: TabBarView(
+              children: categories
+                  .map((category) => TCategoryTab(category: category))
+                  .toList()),
         ),
       ),
     );

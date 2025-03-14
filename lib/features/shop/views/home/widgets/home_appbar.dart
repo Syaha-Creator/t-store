@@ -5,7 +5,7 @@ import '../../../../../common/widgets/appbar/appbar.dart';
 import '../../../../../common/widgets/products/cart/cart_menu_icon.dart';
 import '../../../../../utils/constants/colors.dart';
 import '../../../../../utils/constants/text_strings.dart';
-import '../../../../../utils/shimmer/shimmer.dart';
+import '../../../../../common/widgets/shimmers/shimmer.dart';
 import '../../../../personalization/controllers/user_controller.dart';
 
 class THomeAppBar extends StatelessWidget {
