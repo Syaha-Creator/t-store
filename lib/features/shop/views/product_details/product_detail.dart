@@ -11,9 +11,12 @@ import 'package:tstore/features/shop/views/product_details/widgets/rating_share_
 import 'package:tstore/features/shop/views/product_reviews/product_review.dart';
 
 import '../../../../utils/constants/sizes.dart';
+import '../../models/product_model.dart';
 
 class ProductDetailScreen extends StatelessWidget {
-  const ProductDetailScreen({super.key});
+  const ProductDetailScreen({super.key, required this.product});
+
+  final ProductModel product;
 
   @override
   Widget build(BuildContext context) {

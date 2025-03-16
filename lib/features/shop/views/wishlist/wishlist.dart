@@ -8,9 +8,10 @@ import 'package:tstore/common/widgets/products/product_cards/product_card_vertic
 import 'package:tstore/features/shop/views/home/home.dart';
 
 import '../../../../utils/constants/sizes.dart';
+import '../../models/product_model.dart';
 
-class WishlistScreen extends StatelessWidget {
-  const WishlistScreen({super.key});
+class FavoriteScreen extends StatelessWidget {
+  const FavoriteScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -32,7 +33,9 @@ class WishlistScreen extends StatelessWidget {
           padding: const EdgeInsets.all(TSizes.defaultSpace),
           child: TGridLayout(
               itemCount: 4,
-              itemBuilder: (_, index) => const TProductCardVertical()),
+              itemBuilder: (_, index) => TProductCardVertical(
+                    product: ProductModel.empty(),
+                  )),
         ),
       ),
     );

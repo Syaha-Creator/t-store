@@ -47,7 +47,7 @@ class NavigationController extends GetxController {
   final screens = [
     const HomeScreen(),
     const StoreScreen(),
-    const WishlistScreen(),
+    const FavoriteScreen(),
     const SettingScreen()
   ];
 }
