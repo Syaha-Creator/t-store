@@ -1,37 +1,26 @@
 class ProductAttributeModel {
-  final String id;
-  String name;
-  String value;
+  String? name;
+  final List<String>? values;
 
-  ProductAttributeModel({
-    required this.id,
-    required this.name,
-    required this.value,
-  });
+  ProductAttributeModel({this.name, this.values});
 
-  // Create Empty func for clean code
-  static ProductAttributeModel empty() => ProductAttributeModel(
-        id: '',
-        name: '',
-        value: '',
-      );
-
+  // Json Format
   toJson() {
     return {
-      'Id': id,
       'Name': name,
-      'Value': value,
+      'Values': values,
     };
   }
 
-  // Map JSON oriented document snapshot from Firebase to Model
+  // Map Json Oriented document snapshot from Firebase to Model
   factory ProductAttributeModel.fromJson(Map<String, dynamic> document) {
     final data = document;
-    if (data.isEmpty) return ProductAttributeModel.empty();
+
+    if (data.isEmpty) return ProductAttributeModel();
+
     return ProductAttributeModel(
-      id: data['Id'] ?? '',
-      name: data['Name'] ?? '',
-      value: data['Value'] ?? '',
+      name: data.containsKey('Name') ? data['Name'] : '',
+      values: List<String>.from(data['Values']),
     );
   }
 }

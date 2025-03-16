@@ -2,16 +2,18 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:readmore/readmore.dart';
-import 'package:tstore/common/widgets/texts/section_heading.dart';
-import 'package:tstore/features/shop/views/product_details/widgets/bottom_add_to_cart.dart';
-import 'package:tstore/features/shop/views/product_details/widgets/product_attributes.dart';
-import 'package:tstore/features/shop/views/product_details/widgets/product_detail_image_slider.dart';
-import 'package:tstore/features/shop/views/product_details/widgets/product_meta_data.dart';
-import 'package:tstore/features/shop/views/product_details/widgets/rating_share_widgets.dart';
-import 'package:tstore/features/shop/views/product_reviews/product_review.dart';
 
+import '../../../../common/widgets/texts/section_heading.dart';
+import '../../../../utils/constants/enums.dart';
 import '../../../../utils/constants/sizes.dart';
+import '../../../../utils/helpers/helper_functions.dart';
 import '../../models/product_model.dart';
+import '../product_reviews/product_review.dart';
+import 'widgets/bottom_add_to_cart.dart';
+import 'widgets/product_attributes.dart';
+import 'widgets/product_detail_image_slider.dart';
+import 'widgets/product_meta_data.dart';
+import 'widgets/rating_share_widgets.dart';
 
 class ProductDetailScreen extends StatelessWidget {
   const ProductDetailScreen({super.key, required this.product});
@@ -20,14 +22,14 @@ class ProductDetailScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // final dark = THelperFunctions.isDarkMode(context);
+    final dark = THelperFunctions.isDarkMode(context);
     return Scaffold(
       bottomNavigationBar: const TBottomAddToCart(),
       body: SingleChildScrollView(
         child: Column(
           children: [
             // 1. Product Image Slider
-            const TProductImageSlider(),
+            TProductImageSlider(product: product),
 
             // 2. Product Details
             Padding(
@@ -41,11 +43,13 @@ class ProductDetailScreen extends StatelessWidget {
                   const TRatingAndShare(),
 
                   // Price, Title, Stock & Brand
-                  const TProductMetaData(),
+                  TProductMetaData(product: product),
 
                   // Attributes
-                  const TProductAttributes(),
-                  const SizedBox(height: TSizes.spaceBtwSections),
+                  if (product.productType == ProductType.variable.toString())
+                    TProductAttributes(product: product),
+                  if (product.productType == ProductType.variable.toString())
+                    const SizedBox(height: TSizes.spaceBtwSections),
 
                   // Checkout Button
                   SizedBox(
@@ -58,16 +62,16 @@ class ProductDetailScreen extends StatelessWidget {
                   const TSectionHeading(
                       title: 'Description', showActionButton: false),
                   const SizedBox(height: TSizes.spaceBtwItems),
-                  const ReadMoreText(
-                    'This is a Product description for Blue Nike Sleeve less vest. There are more things that can be added but i can\'t explain any more',
+                  ReadMoreText(
+                    product.description ?? '',
                     trimLines: 2,
                     trimMode: TrimMode.Line,
                     trimCollapsedText: ' Show More',
                     trimExpandedText: ' Less',
-                    moreStyle:
-                        TextStyle(fontSize: 14, fontWeight: FontWeight.w800),
-                    lessStyle:
-                        TextStyle(fontSize: 14, fontWeight: FontWeight.w800),
+                    moreStyle: const TextStyle(
+                        fontSize: 14, fontWeight: FontWeight.w800),
+                    lessStyle: const TextStyle(
+                        fontSize: 14, fontWeight: FontWeight.w800),
                   ),
 
                   // Reviews

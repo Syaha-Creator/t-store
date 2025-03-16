@@ -8,7 +8,7 @@ import 'package:tstore/features/shop/models/product_model.dart';
 import 'package:tstore/features/shop/views/product_details/product_detail.dart';
 import 'package:tstore/utils/helpers/helper_functions.dart';
 
-import '../../../../features/shop/controllers/product_controller.dart';
+import '../../../../features/shop/controllers/product/product_controller.dart';
 import '../../../../utils/constants/colors.dart';
 import '../../../../utils/constants/enums.dart';
 import '../../../../utils/constants/sizes.dart';
